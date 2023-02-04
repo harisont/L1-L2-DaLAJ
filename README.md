@@ -17,7 +17,7 @@ Learner sentences, correction hypotheses and error labels were extracted from th
    - `x-geoplats` -> `Kviberg`
    - `x-stad` -> `Göteborg`
    - `x-hemland` -> `Italien`
-3. the resulting sentences were parsed with [UDPipe 1](https://ufal.mff.cuni.cz/udpipe/1) using the [`swedish-talbanken-ud-2.5-191206`](https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234/1-3131/swedish-talbanken-ud-2.5-191206.udpipe?sequence=96&isAllowed=y) model
+3. the resulting sentences were parsed with [UDPipe 1](https://ufal.mff.cuni.cz/udpipe/1) using the [`swedish-talbanken-ud-2.5-191206`](https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234/1-3131/swedish-talbanken-ud-2.5-191206.udpipe?sequence=96&isAllowed=y) model. The results of the UD annotation are **not** manually validated.
 4. the resulting CoNNL-U sentences were shuffled
 5. error labels were added to the L2 CoNNL-U file
 
