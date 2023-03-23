@@ -17,8 +17,8 @@ Learner sentences, correction hypotheses and error labels were extracted from th
    - `x-stad` -> `Göteborg`
    - `x-hemland` -> `Italien`
 3. the resulting __sentences were automatically annotated in UD__ with [UDPipe 1](https://ufal.mff.cuni.cz/udpipe/1) using the [`swedish-talbanken-ud-2.5-191206`](https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234/1-3131/swedish-talbanken-ud-2.5-191206.udpipe?sequence=96&isAllowed=y) model. The results of the UD annotation are NOT manually validated.
-4. the resulting CoNNL-U sentences were shuffled
-5. DaLAJ error labels were added as sentence metadata to the L2 CoNNL-U file (e.g. `# error_labels = L-Der`)
+4. the resulting CoNNL-U __sentences were shuffled__
+5. DaLAJ __error labels were added__ as sentence metadata to the L2 CoNNL-U file (e.g. `# error_labels = L-Der`)
 
 ## Citation
 If you use this data, you are welcome to cite
