@@ -1,7 +1,7 @@
 # L1-L2-DaLAJ
 The [DaLAJ Dataset for Linguistic Acceptability Judgments for Swedish](https://arxiv.org/abs/2105.06681) as an [L1-L2 parallel UD treebank](https://aclanthology.org/W17-6306/).
 
-## Processing
+## Data
 Learner sentences, correction hypotheses and error labels were extracted from the original DaLAJ TSV files and processed as follows: 
 
 1. __missing token markers (`@`) were removed__ from the L2 sentences
