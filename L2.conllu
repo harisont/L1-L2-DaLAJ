@@ -15016,7 +15016,7 @@
 44	.	.	PUNCT	MAD	_	3	punct	_	_
 
 # sent_id = 1811
-# error_labels = S-Clause
+# error_labels = M-Case
 1	Efter	efter	ADP	PP	_	3	case	_	_
 2	6	6	NUM	RG|NOM	Case=Nom|NumType=Card	3	nummod	_	_
 3	månader	månad	NOUN	NN|UTR|PLU|IND|NOM	Case=Nom|Definite=Ind|Gender=Com|Number=Plur	4	obl	_	_
