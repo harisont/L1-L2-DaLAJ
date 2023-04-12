@@ -16,9 +16,16 @@ Learner sentences, correction hypotheses and error labels were extracted from th
    - `x-geoplats` -> `Kviberg`
    - `x-stad` -> `Göteborg`
    - `x-hemland` -> `Italien`
-3. the resulting __sentences were automatically annotated in UD__ with [UDPipe 1](https://ufal.mff.cuni.cz/udpipe/1) using the [`swedish-talbanken-ud-2.5-191206`](https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234/1-3131/swedish-talbanken-ud-2.5-191206.udpipe?sequence=96&isAllowed=y) model. The results of the UD annotation are NOT manually validated.
-4. the resulting CoNNL-U __sentences were shuffled__
-5. DaLAJ __error labels were added__ as sentence metadata to the L2 CoNNL-U file (e.g. `# error_labels = L-Der`)
+3. the resulting __sentences were automatically annotated in UD__ with [UDPipe 1](https://ufal.mff.cuni.cz/udpipe/1) using the [`swedish-talbanken-ud-2.5-191206`](https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234/1-3131/swedish-talbanken-ud-2.5-191206.udpipe?sequence=96&isAllowed=y) model. The results of the UD annotation are NOT manually validated
+4. DaLAJ __error labels were added__ as sentence metadata to the L2 CoNNL-U file (e.g. `# error_labels = L-Der`)
+5. __the treebank was filtered__ with the [`filter_swell_labels.py`](filter_swell_labels.py) to only keep M- and S- labelled sentences, i.e. sentences containing morphosyntactical errors
+6. the resulting __CoNNL-U sentences were shuffled and split__ into a dev and a test set with the [`random_split.py`](random_split.py) script. The test set, to be used for manually evaluating example sentence retrieval, contains 100 sentences. The dev set contains all other sentences
+7. during preliminary experiments using the dev set, it was noted that many errors were due to incorrect UD annotation. All parts of the treebank (both the splits and the full treebank) were therefore re-annotated using the [UDPipe 2 REST API](https://lindat.mff.cuni.cz/services/udpipe/api-reference.php) with the default Swedish model. For instance, for the L2 half of the dev set:
+   
+   ```
+   curl -F data=@dev_L2.conllu -F model=swedish -F tagger= -F parser= http://lindat.mff.cuni.cz/services/udpipe/api/process | PYTHONIOENCODING=utf-8 python -c "import sys,json; sys.stdout.write(json.load(sys.stdin)['result'])" > dev_L2_udpipe2.conllu
+   ```
+   This round of annotation was also NOT manually checked, but a superficial comparison revealed that using UDPipe 2 gives significant improvements wrt UDPipe 1.
 
 ## Citation
 If you use this data, you are welcome to cite
